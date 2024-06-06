@@ -1,4 +1,4 @@
-<tool id="seurat_normalize_select_features_scale_regress" name="Normalize, select features, scale and regress" version="@TOOL_VERSION@+galaxy@VERSION_SUFFIX@" profile="@PROFILE@">
+<tool id="seurat_normalize_select_features_scale_regress" name="Seurat Normalize, Filter and scale" version="@TOOL_VERSION@+galaxy@VERSION_SUFFIX@" profile="@PROFILE@">
     <macros>
         <import>macros.xml</import>
     </macros>
@@ -50,7 +50,7 @@ seurat_obj<-NormalizeData(
     normalization.method = '$method.normalization_method',
     scale.factor = $method.scale_factor,
     margin = $method.margin,
-    #if $method.block_size != ''
+    #if $method.block_size
     block.size = $method.block_size
     #end if
 )

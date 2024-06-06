@@ -1,4 +1,4 @@
-<tool id="seurat_cluster_reduce_dimension" name="Run dimensional reduction" version="@TOOL_VERSION@+galaxy@VERSION_SUFFIX@" profile="@PROFILE@">
+<tool id="seurat_cluster_reduce_dimension" name="Seurat dimensional reduction" version="@TOOL_VERSION@+galaxy@VERSION_SUFFIX@" profile="@PROFILE@">
     <macros>
         <import>macros.xml</import>
     </macros>
@@ -68,7 +68,7 @@ seurat_obj<-RunUMAP(
     n.neighbors = $method.n_neighbors,
     n.components = $method.n_components,
     metric = '$method.metric',
-    #if $method.n_epochs != ''
+    #if $method.n_epochs
     n.epochs = $method.n_epochs,
     #end if
     learning.rate = $method.learning_rate,

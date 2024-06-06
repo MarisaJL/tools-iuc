@@ -1,4 +1,5 @@
-<tool id="seurat_plot" name="Plot seurat data" version="@TOOL_VERSION@+galaxy@VERSION_SUFFIX@" profile="@PROFILE@">
+<tool id="seurat_plot" name="Seurat Plot" version="@TOOL_VERSION@+galaxy@VERSION_SUFFIX@" profile="@PROFILE@">
+<description>cells, features and dimensions</description>
     <macros>
         <import>macros.xml</import>
     </macros>
@@ -76,10 +77,10 @@ plot<-DimHeatmap(
     cells = $method.cells,
     #end if
     reduction = '$method.reduction',
-    #if $method.disp_min != ''
+    #if $method.disp_min
     disp.min = $method.disp_min,
     #end if
-    #if $method.disp_max != ''
+    #if $method.disp_max
     disp.max = $method.disp_max,
     #end if
     projected = $method.projected,

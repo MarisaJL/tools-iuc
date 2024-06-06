@@ -1,4 +1,5 @@
-<tool id="seurat_neighbors_clusters_markers" name="Find neighbors, clusters and markers" version="@TOOL_VERSION@+galaxy@VERSION_SUFFIX@" profile="@PROFILE@">
+<tool id="seurat_neighbors_clusters_markers" name="Seurat Clustering" version="@TOOL_VERSION@+galaxy@VERSION_SUFFIX@" profile="@PROFILE@">
+<description>, finding neighbors and markers</description>
     <macros>
         <import>macros.xml</import>
     </macros>
@@ -28,7 +29,7 @@ seurat_obj<-FindNeighbors(
     k.param = $method.k_param,
     return.neighbor = $method.return_neighbor,
     compute.snn = $method.compute_snn,
-    #if $method.prune_snn != ''
+    #if $method.prune_snn
     prune.snn = $method.prune_snn,
     #end if
     nn.method = '$method.nn_method.nn_method',
@@ -53,10 +54,10 @@ seurat_obj<-FindClusters(
     resolution = $method.resolution,
     algorithm = $method.algorithm.algorithm,
     #if $method.algorithm.algorithm == 4
-        #if $method.algorithm.initial_membership != ''
+        #if $method.algorithm.initial_membership
         initial.membership = $method.algorithm.initial_membership,
         #end if
-        #if $method.algorithm.node_sizes != ''
+        #if $method.algorithm.node_sizes
         node.sizes = $method.algorithm.node_sizes,
         #end if
         method = '$method.algorithm.method_cluster',
@@ -101,11 +102,11 @@ seurat_obj<-FindAllMarkers(
     #end if
     slot = '$method.slot',
     min.pct = $method.min_pct,
-    #if $method.min_diff_pct != ''
+    #if $method.min_diff_pct
     min.diff.pct = $method.min_diff_pct,
     #end if
     only.pos = $method.only_pos,
-    #if $method.max_cells_per_ident != ''
+    #if $method.max_cells_per_ident
     max.cells.per.ident = $method.max_cells_per_ident,
     #end if
     random.seed = $method.random_seed,
